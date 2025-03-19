@@ -23,10 +23,12 @@ def top_ten(subreddit):
         print(None)
         return
 
-    jsonData = response.json()
-    data = jsonData["data"]["children"]
-    for post in data:
-        print(post.get("data", {}).get("title"))
+    json_data = response.json()
+    data = json_data.get("data", {}).get("children", [])
+    if not data:
+        print(None)
+        return
 
-
-# top_ten("programming")
+    # Print the titles of the first 10 posts
+    for post in data[:10]:
+        print(post.get("data", {}).get("title", None))
