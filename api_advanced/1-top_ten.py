@@ -1,8 +1,6 @@
 #!/usr/bin/python3
-"""
-A module that prints the titles of the top
-10 hot posts from a subreddit.
-"""
+"""Prints the title of the first 10 hot posts listed for a given subreddit"""
+
 import requests
 
 
